@@ -15,17 +15,18 @@ const questions = [
   // Define variables
   let currentQuestionIndex = 0;
   let timeLeft = 60; // Initial time for the quiz
+  let userScores = JSON.parse(localStorage.getItem('scores')) ||[]
   
   // Reference to HTML elements
-  const startButton = document.getElementById("start-button");
-  const quizContainer = document.getElementById("quiz-container");
-  const questionElement = document.getElementById("question");
-  const optionsContainer = document.getElementById("options-container");
-  const timerElement = document.getElementById("timer");
+  const startButton = document.getElementById("start");
+  const quizContainer = document.getElementById("questions");
+  const questionElement = document.getElementById("question-title");
+  const optionsContainer = document.getElementById("choices");
+  const timerElement = document.getElementById("time");
   const endScreen = document.getElementById("end-screen");
-  const scoreDisplay = document.getElementById("score-display");
-  const initialsInput = document.getElementById("initials-input");
-  const submitButton = document.getElementById("submit-button");
+  const scoreDisplay = document.getElementById("final-score");
+  const initialsInput = document.getElementById("initials");
+  const submitButton = document.getElementById("submit");
   
   // Function to start the quiz
   function startQuiz() {
@@ -102,11 +103,21 @@ const questions = [
     const initials = initialsInput.value.trim();
   
     if (initials !== "") {
-      // Save the score and initials (You can implement your storage logic here)
-      alert(`Score saved! Initials: ${initials}, Score: ${timeLeft}`);
+      // Save the score and initials in local storage(You can implement your storage logic here)
+
+      const userInfo = {
+        initials: initials,
+        score: timeLeft
+      } 
+
+
+     userScores.push(userInfo)
+     localStorage.setItem ('scores', JSON.stringify(userScores))
+
       // Redirect or perform other actions as needed
-    } else {
+      window.location.href =  "highscores.html"
+    } else { 
       alert("Please enter your initials.");
     }
-  }
+  } 
   
