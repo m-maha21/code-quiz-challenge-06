@@ -1,10 +1,10 @@
-# Code Quiz Challenge
+# Code Quiz App
 
 ## Description
 
+My app is a timed coding quiz designed to help coding students practice their JavaScript fundamentals and compare their progress to their peers by storing high scores.
 
-
-Link to walkthrough video: https://drive.google.com/file/d/16Cks9Fx-aQo9KM1aXH8GQXBRGXLHnehR/view?pli=1
+Please click here to the deployed site of my application: https://m-maha21.github.io/code-quiz-challenge-06/ 
 
 ## Table of Contents 
 
@@ -18,18 +18,23 @@ Link to walkthrough video: https://drive.google.com/file/d/16Cks9Fx-aQo9KM1aXH8G
 
 ## Installation
 
-To install and run the README generator project, you'll need to follow these steps:
-1. Clone the repository from GitHub to your local machine using the following command: git clone <repository_url>
-2. Navigate to the Project Directory using the following command: cd professional-readme-generator
-3. Install Dependencies using npm: npm install
+N/A
 
 ## Usage
 
-To use the README generator, follow these steps:
-1. Run the Application by executing the index.js file using Node.js: node index.js
-2. Follow the Prompts
-3. Review the generated README file
-4. Make adjustments as required
+To use the Code Quiz App, please follow these steps:
+
+1. The quiz features a start button that, when clicked, initiates a timer and displays the first question.
+2. Questions are presented with multiple-choice answers, each represented by buttons.
+3. When an answer is clicked, the quiz progresses to the next question.
+4. If an incorrect answer is selected, time is deducted from the timer.
+5. The quiz ends when either all questions are answered or the timer reaches 0.
+6. Upon game end, the user's score is displayed, indicating how many questions were answered correctly within the allotted time.
+7. The user is provided with the ability to save their initials and their score, facilitating comparison with other users.
+
+## Screenshot 
+
+![alt text](assets/images/screenshot.jpeg)
 
 ## License
 N/A
