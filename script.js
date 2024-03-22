@@ -1,9 +1,9 @@
 // Define your quiz questions and answers
 const questions = [
     {
-      question: "What is the capital of France?",
-      options: ["Berlin", "Madrid", "Paris", "Rome"],
-      correctAnswer: "Paris"
+      question: "Which method is used to add a new element to the end of an array in JavaScript?",
+      options: ["push()", "append()", "addToEnd()", "insertLast()"],
+      correctAnswer: "push()"
     },
     {
       question: "Which programming language is used for front-end web development?",
@@ -11,14 +11,14 @@ const questions = [
       correctAnswer: "JavaScript"
     },
     {
-      question: "What is the capital of Italy?",
-      options: ["Berlin", "Madrid", "Paris", "Rome"],
-      correctAnswer: "Rome"
+      question: "What does the `typeof` operator in JavaScript return when applied to `null`?",
+      options: ["Object", "Null", "Undefined", "Number"],
+      correctAnswer: "Object"
     },
     {
-      question: "What is the capital of Germany?",
-      options: ["Berlin", "Madrid", "Paris", "Rome"],
-      correctAnswer: "Berlin"
+      question: "What is the correct way to declare a variable in JavaScript?",
+      options: ["variable x", "let x", "var x", "const x"],
+      correctAnswer: "let x"
     },
     {
       question: "What does HTML stand for?",
@@ -31,9 +31,14 @@ const questions = [
       correctAnswer: "Cascading Style Sheets"
     },
     {
-      question: "What is the capital of Portugal?",
-      options: ["Berlin", "Madrid", "Lisbon", "Rome"],
-      correctAnswer: "Lisbon"
+      question: "Which of the following is NOT a JavaScript data type?",
+      options: ["Boolean", "String", "Float", "Object"],
+      correctAnswer: "Float"
+    },
+    {
+      question: "What does the `===` operator do in JavaScript?",
+      options: ["Checks for equality without type conversion", "Checks for equality with type conversion", "Checks for inequality without type conversion", "Checks for inequality with type conversion"],
+      correctAnswer: "Checks for equality without type conversion"
     },
   ];
   
