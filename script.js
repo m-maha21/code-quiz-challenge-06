@@ -10,12 +10,37 @@ const questions = [
       options: ["Java", "Python", "HTML", "JavaScript"],
       correctAnswer: "JavaScript"
     },
+    {
+      question: "What is the capital of Italy?",
+      options: ["Berlin", "Madrid", "Paris", "Rome"],
+      correctAnswer: "Rome"
+    },
+    {
+      question: "What is the capital of Germany?",
+      options: ["Berlin", "Madrid", "Paris", "Rome"],
+      correctAnswer: "Berlin"
+    },
+    {
+      question: "What does HTML stand for?",
+      options: ["Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyperlink Transfer Markup Language"],
+      correctAnswer: "Hyper Text Markup Language"
+    },
+    {
+      question: "What does CSS stand for?",
+      options: ["Computer Style Sheets", "Cascading Style Sheets", "Creative Style Sheets", "Colorful Style Sheets"],
+      correctAnswer: "Cascading Style Sheets"
+    },
+    {
+      question: "What is the capital of Portugal?",
+      options: ["Berlin", "Madrid", "Lisbon", "Rome"],
+      correctAnswer: "Lisbon"
+    },
   ];
   
   // Define variables
   let currentQuestionIndex = 0;
   let timeLeft = 60; // Initial time for the quiz
-  let userScores = JSON.parse(localStorage.getItem('scores')) ||[]
+  // let userScores = JSON.parse(localStorage.getItem('scores')) ||[]
   
   // Reference to HTML elements
   const startButton = document.getElementById("start");
@@ -103,21 +128,45 @@ const questions = [
     const initials = initialsInput.value.trim();
   
     if (initials !== "") {
-      // Save the score and initials in local storage(You can implement your storage logic here)
-
-      const userInfo = {
-        initials: initials,
+     // Save the score and initials in local storage(You can implement your storage logic here)
+     const userInfo = {
+      initials: initials,
         score: timeLeft
-      } 
-
-
-     userScores.push(userInfo)
-     localStorage.setItem ('scores', JSON.stringify(userScores))
+      }; 
+ userScores.push(userInfo)
+      localStorage.setItem ('scores', JSON.stringify(userScores));
 
       // Redirect or perform other actions as needed
-      window.location.href =  "highscores.html"
+      window.location.href =  "highscores.html";
     } else { 
       alert("Please enter your initials.");
     }
-  } 
-  
+  }
+
+// Reference to HTML elements
+const highscores = document.getElementById("highscores");
+const clearButton = document.getElementById("clear");
+
+// Load scores from local storage
+const userScores = JSON.parse(localStorage.getItem("scores")) || [];
+
+// Display scores
+function displayScores() {
+  highscores.innerHTML = ""; // Clear previous scores
+
+  userScores.forEach((userInfo, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${index + 1}. ${userInfo.initials}: ${userInfo.score}`;
+    highscores.appendChild(listItem);
+  });
+}
+
+// Event listener for clearing highscores
+clearButton.addEventListener("click", function () {
+  localStorage.removeItem("scores"); // Clear scores from local storage
+  displayScores(); // Update the displayed scores
+});
+
+// Display initial scores when the page loads
+displayScores();
+ 
